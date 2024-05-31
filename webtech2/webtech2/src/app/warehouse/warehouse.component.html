@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="title">Raktári egységek</h2>
+
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="loadWarehouseItems()">Frissítés</button>
+    <button mat-raised-button color="accent" routerLink="/warehouse-list">Egység hozzáadása</button>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Keresés..." [(ngModel)]="searchTerm" (input)="searchWarehouseItems()" />
+  </div>
+
+  <div class="chart-container">
+    <canvas baseChart
+            [data]="chartData"
+            [options]="chartOptions"
+            chartType="bar">
+    </canvas>
+  </div>
+
+  <div class="item-list" *ngIf="filteredWarehouseItems.length > 0">
+    <div class="item" *ngFor="let item of filteredWarehouseItems">
+      <span class="item-name">Alkatrész neve: {{ item.name }}</span>
+      <span class="item-quantity">Mennyiség: {{ item.quantity }}db</span>
+      <span class="item-stockNumber">Raktári szám: #{{ item.stockNumber }}</span>
+      <span class="item-dateAdded">Bevételezés ideje: {{ item.dateAdded }}</span>
+      <button class="btn btn-outline-danger" (click)="deleteWarehouseItem(item.id)">Törlés</button>
+    </div>
+  </div>
+
+  <div *ngIf="!filteredWarehouseItems.length">
+    Nincs találat a keresett kifejezésre.
+  </div>
+</div>

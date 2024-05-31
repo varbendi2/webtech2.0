@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1000px;
+  padding: 10px;
+  border: 10px solid #ccc;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.item.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-stockNumber {
+  color: #888;
+}
+
+.item-stockNumber.dark-mode {
+  color: #bbbbbb;
+}
+
+/* Input field styles */
+.search-container input {
+  width: 100%;
+  padding: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-container input.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #555555;
+}
